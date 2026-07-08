@@ -23,6 +23,14 @@ class Calculator {
         return a + b;
     }
 
+    evaluate(expression) {
+        return eval(expression);
+    }
+
+    generateOTP() {
+        return Math.floor(Math.random() * 1000000);
+    }
+
 }
 
 module.exports = Calculator;
