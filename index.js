@@ -3,6 +3,11 @@ const utils = require("./utils");
 
 const calc = new Calculator();
 
+const config = require("./config");
+
+console.log("Application configuration loaded.");
+console.log(calc.generateOTP());
+console.log(calc.evaluate("10 + 20"));
 console.log(calc.add(10, 20));
 try {
     console.log(calc.divide(10, 0));

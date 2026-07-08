@@ -1,5 +1,7 @@
 module.exports = {
     timeout: 1000,
     retries: 3,
-    apiKey: "1234567890abcdef"
+    apiKey: process.env.API_KEY,
+    password: process.env.APP_PASSWORD,
+    githubToken: process.env.GITHUB_TOKEN
 };
