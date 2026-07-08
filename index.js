@@ -16,7 +16,6 @@ try {
 }
 
 utils.readFile("data.txt").catch(console.error);
-utils.execute("dir");
 
 const x = 100;
 const y = 200;
