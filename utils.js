@@ -17,7 +17,5 @@ async function readFile(file) {
 }
 
 module.exports = {
-    readFile,
-    unusedMethod,
-    execute
+    readFile
 };
