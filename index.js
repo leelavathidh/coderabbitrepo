@@ -11,6 +11,6 @@ utils.readFile("data.txt");
 const x = 100;
 const y = 200;
 
-if (x == y) {
+if (x === y) {
     console.log("Equal");
 }

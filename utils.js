@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 function readFile(file) {
-    const data = fs.readFileSync(file);
+    const data = fs.promises.readFile(file);
     console.log(data.toString());
 }
 
