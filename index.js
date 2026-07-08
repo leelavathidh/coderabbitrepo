@@ -15,7 +15,11 @@ try {
     console.error(err.message);
 }
 
-utils.readFile("data.txt").catch(console.error);
+utils.readFile("data.txt")
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
 
 const x = 100;
 const y = 200;
