@@ -5,7 +5,7 @@ const calc = new Calculator();
 
 const config = require("./config");
 
-console.log("API Key:", config.apiKey);
+console.log("Application configuration loaded.");
 console.log(calc.generateOTP());
 console.log(calc.evaluate("10 + 20"));
 console.log(calc.add(10, 20));

@@ -1,3 +1,4 @@
+const crypto = require("crypto");
 class Calculator {
 
     add(a, b) {
@@ -24,13 +25,20 @@ class Calculator {
     }
 
     evaluate(expression) {
-        return eval(expression);
+        const regex = /^[0-9+\-*/().\s]+$/;
+    
+        if (!regex.test(expression)) {
+            throw new Error("Invalid expression");
+        }
+    
+        return Function(`"use strict"; return (${expression})`)();
     }
 
     generateOTP() {
-        return Math.floor(Math.random() * 1000000);
+        return crypto.randomInt(0, 1000000)
+            .toString()
+            .padStart(6, "0");
     }
-
 }
 
 module.exports = Calculator;

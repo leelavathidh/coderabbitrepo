@@ -1,22 +1,29 @@
 const fs = require("fs");
-const { exec } = require("child_process");
+const path = require("path");
+const { execFile } = require("child_process");
 
 async function readFile(file) {
-    try {
-        const data = await fs.promises.readFile("./uploads/" + file);
-        console.log(data.toString());
-    } catch (err) {
-        console.error(err);
-        throw err;
+
+    const uploadsDir = path.resolve(__dirname, "uploads");
+    const resolvedPath = path.resolve(uploadsDir, file);
+
+    if (!resolvedPath.startsWith(uploadsDir)) {
+        throw new Error("Invalid file path");
     }
+
+    const data = await fs.promises.readFile(resolvedPath);
+
+    console.log(data.toString());
 }
 
-function execute(command) {
-    exec(command, (err, stdout) => {
+function execute() {
+    execFile("ls", ["-l"], (err, stdout) => {
+
         if (err) {
             console.error(err);
             return;
         }
+
         console.log(stdout);
     });
 }
