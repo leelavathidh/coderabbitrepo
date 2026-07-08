@@ -6,6 +6,7 @@ async function readFile(file) {
         console.log(data.toString());
     } catch (err) {
         console.error(err);
+        throw err; // Re-throw so the caller can handle it
     }
 }
 
